@@ -1,10 +1,19 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_store/src/auth/components/custom_text_field.dart';
+import 'package:app_store/src/auth/sign_up_screen.dart';
 import 'package:app_store/src/config/custom_color.dart';
 import 'package:flutter/material.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  @override
+  _SignInScreenState createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,57 +28,58 @@ class SignInScreen extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text.rich(
-                    TextSpan(
-                      style: const TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                      ),
-                      children: [
-                        const TextSpan(
-                          text: 'Ifood',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text.rich(
+                      TextSpan(
+                        style: const TextStyle(
+                          fontSize: 40,
+                          color: Colors.white,
                         ),
-                        TextSpan(
-                          text: 'Market',
-                          style: TextStyle(
-                            color: CustomColor.customContrastColor,
+                        children: [
+                          const TextSpan(
+                            text: 'Ifood',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  //CATEGORIAS
-                  SizedBox(
-                    height: 35,
-                    child: DefaultTextStyle(
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                      child: AnimatedTextKit(
-                        pause: Duration.zero,
-                        repeatForever: true,
-                        animatedTexts: [
-                          ScaleAnimatedText('Frutas'),
-                          ScaleAnimatedText('Temperos'),
-                          ScaleAnimatedText('Legumes'),
-                          ScaleAnimatedText('Frios'),
-                          ScaleAnimatedText('Carnes'),
-                          ScaleAnimatedText('Laticíneos'),
+                          TextSpan(
+                            text: 'Market',
+                            style: TextStyle(
+                              color: CustomColor.customContrastColor,
+                            ),
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                ],
-              )),
-              //FORMULÁRIO
+                    // CATEGORIAS
+                    SizedBox(
+                      height: 35,
+                      child: DefaultTextStyle(
+                        style: const TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                        child: AnimatedTextKit(
+                          pause: Duration.zero,
+                          repeatForever: true,
+                          animatedTexts: [
+                            ScaleAnimatedText('Frutas'),
+                            ScaleAnimatedText('Temperos'),
+                            ScaleAnimatedText('Legumes'),
+                            ScaleAnimatedText('Frios'),
+                            ScaleAnimatedText('Carnes'),
+                            ScaleAnimatedText('Laticíneos'),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // FORMULÁRIO
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32,
@@ -84,17 +94,18 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    //EMAIL
+                    // EMAIL
                     CustomTextField(
                       icon: Icons.mail,
                       label: 'Email',
+                      controller: emailController, // Adicionando o controller
                     ),
-
-                    //SENHA
+                    // SENHA
                     CustomTextField(
                       icon: Icons.lock,
                       label: 'Senha',
                       isSecret: true,
+                      controller: senhaController, // Adicionando o controller
                     ),
                     SizedBox(
                       height: 50,
@@ -104,19 +115,24 @@ class SignInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          // Lógica de login aqui
+                        },
                         child: Text(
                           "Entrar",
                           style: TextStyle(
-                              fontSize: 18,
-                              color: CustomColor.customContrastColor),
+                            fontSize: 18,
+                            color: CustomColor.customContrastColor,
+                          ),
                         ),
                       ),
                     ),
                     Align(
                       alignment: Alignment.centerRight,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          // Lógica de recuperação de senha aqui
+                        },
                         child: Text(
                           'Esqueceu a senha?',
                           style: TextStyle(
@@ -148,19 +164,25 @@ class SignInScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-
                     SizedBox(
                       height: 50,
                       child: OutlinedButton(
                         style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                          side: BorderSide(
+                            width: 2,
+                            color: CustomColor.customContrastColor,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const SignUpScreen(),
                             ),
-                            side: BorderSide(
-                              width: 2,
-                              color: CustomColor.customContrastColor,
-                            )),
-                        onPressed: () {},
+                          );
+                        },
                         child: Text(
                           'Criar conta',
                           style: TextStyle(
