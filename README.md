@@ -1,16 +1,10 @@
-# app_store
+# Loja Virtual
+Este é um aplicativo de loja virtual desenvolvido em Flutter, com GetX utilizado como gerenciador de estado e várias bibliotecas de animação integradas para melhorar a experiência do usuário. A loja permitirá o pagamento via Pix.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Funcionalidades
+- Navegação fácil e rápida com GetX para gerenciamento de rotas e estado.
+- Interface interativa com animações suaves.
+- Suporte a pagamentos por Pix para uma experiência de compra prática e rápida.
+- Catálogo de produtos com detalhamento completo.
+- Carrinho de compras dinâmico, com atualizações em tempo real.
+- Tela de checkout com cálculo de total de pedidos e opções de pagamento.
