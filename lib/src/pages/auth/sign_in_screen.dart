@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:app_store/src/auth/components/custom_text_field.dart';
-import 'package:app_store/src/auth/sign_up_screen.dart';
+import 'package:app_store/src/pages/auth/components/custom_text_field.dart';
+import 'package:app_store/src/pages/auth/sign_up_screen.dart';
+import 'package:app_store/src/pages/base/base_screen.dart';
 import 'package:app_store/src/config/custom_color.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +49,8 @@ class _SignInScreenState extends State<SignInScreen> {
                           TextSpan(
                             text: 'Market',
                             style: TextStyle(
-                              color: CustomColor.customContrastColor,
+                              color: CustomColor.customPurpleColor,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
@@ -98,14 +100,14 @@ class _SignInScreenState extends State<SignInScreen> {
                     CustomTextField(
                       icon: Icons.mail,
                       label: 'Email',
-                      controller: emailController, // Adicionando o controller
+                      controller: emailController,
                     ),
                     // SENHA
                     CustomTextField(
                       icon: Icons.lock,
                       label: 'Senha',
                       isSecret: true,
-                      controller: senhaController, // Adicionando o controller
+                      controller: senhaController,
                     ),
                     SizedBox(
                       height: 50,
@@ -116,7 +118,10 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ),
                         onPressed: () {
-                          // Lógica de login aqui
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (c) {
+                            return const BaseScreen();
+                          }));
                         },
                         child: Text(
                           "Entrar",

@@ -1,5 +1,5 @@
-import 'package:app_store/src/auth/components/custom_text_field.dart';
 import 'package:app_store/src/config/custom_color.dart';
+import 'package:app_store/src/pages/auth/components/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
