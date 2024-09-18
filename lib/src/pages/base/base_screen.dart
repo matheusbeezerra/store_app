@@ -1,5 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import 'package:app_store/src/home/home_tab.dart';
+import 'package:app_store/src/pages/home/home_tab.dart';
 import 'package:flutter/material.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -41,7 +41,7 @@ class _BaseScreenState extends State<BaseScreen> {
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: [
-          const HomeTab(), // Página Home
+          HomeTab(), // Página Home
           Container(color: Colors.white), // Página Thumb
           Container(color: Colors.white), // Página Carrinho
           Container(color: Colors.white), // Página Pedidos

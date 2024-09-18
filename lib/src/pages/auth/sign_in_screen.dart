@@ -1,7 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:app_store/src/auth/components/custom_text_field.dart';
-import 'package:app_store/src/auth/sign_up_screen.dart';
-import 'package:app_store/src/base/base_screen.dart';
+import 'package:app_store/src/pages/auth/components/custom_text_field.dart';
+import 'package:app_store/src/pages/auth/sign_up_screen.dart';
+import 'package:app_store/src/pages/base/base_screen.dart';
 import 'package:app_store/src/config/custom_color.dart';
 import 'package:flutter/material.dart';
 
