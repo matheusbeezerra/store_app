@@ -18,6 +18,5 @@ abstract class CustomColor {
 
   static Color customPurpleColor = Colors.purple.shade700;
 
-  static MaterialColor customSwatchColor =
-      MaterialColor(0xFFF44336, _swatchOpacity);
+  static MaterialColor customSwatchColor = MaterialColor(0xFFF44336, _swatchOpacity);
 }

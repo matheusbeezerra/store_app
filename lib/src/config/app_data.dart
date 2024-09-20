@@ -4,7 +4,7 @@ ItemModel banana = ItemModel(
   description: 'Banana Pacovan',
   imgUrl: 'assets/image/banana.jpg',
   itemName: 'Banana',
-  price: 5.5,
+  price: 5.50,
   unit: 'kg',
 );
 
@@ -20,7 +20,7 @@ ItemModel tomate = ItemModel(
   description: 'Tomate',
   imgUrl: 'assets/image/tomate.png',
   itemName: 'Tomate',
-  price: 5.5,
+  price: 2.50,
   unit: 'kg',
 );
 
@@ -28,15 +28,15 @@ ItemModel detergente = ItemModel(
   description: 'Detergente',
   imgUrl: 'assets/image/detergente.png',
   itemName: 'Detergente',
-  price: 5.5,
+  price: 3.50,
   unit: 'kg',
 );
 
 ItemModel queijo = ItemModel(
   description: 'Queijo Coalho',
-  imgUrl: 'assets/image/queij.png',
+  imgUrl: 'assets/image/queijo.png',
   itemName: 'Queijo',
-  price: 5.5,
+  price: 10.00,
   unit: 'kg',
 );
 
@@ -44,7 +44,7 @@ ItemModel melancia = ItemModel(
   description: 'Melancia',
   imgUrl: 'assets/image/melancia.png',
   itemName: 'Melancia',
-  price: 5.5,
+  price: 8.90,
   unit: 'kg',
 );
 

@@ -60,7 +60,7 @@ class _BaseScreenState extends State<BaseScreen> {
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
         activeIndex: currentIndex > 0 ? currentIndex - 1 : -1,  // Ignora o ícone Home
-        gapLocation: GapLocation.center,  // Espaço reservado para o botão flutuante
+        gapLocation: GapLocation.center, // Espaço reservado para o botão flutuante
         notchSmoothness: NotchSmoothness.verySmoothEdge,  
         leftCornerRadius: 32,
         rightCornerRadius: 32,

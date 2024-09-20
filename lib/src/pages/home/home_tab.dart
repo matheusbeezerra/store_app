@@ -1,7 +1,9 @@
 import 'package:app_store/src/config/custom_color.dart';
 import 'package:app_store/src/pages/home/components/category_tile.dart';
+import 'package:app_store/src/pages/home/components/item_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:app_store/src/config/app_data.dart' as appData;
 
 class HomeTab extends StatefulWidget {
   HomeTab({super.key});
@@ -106,7 +108,7 @@ class _HomeTabState extends State<HomeTab> {
                     onPressed: () {
                       setState(() {
                         selectedCategory = categories[index];
-                      });  
+                      });
                     },
                     category: categories[index],
                     isSelected: categories[index] == selectedCategory,
@@ -114,6 +116,39 @@ class _HomeTabState extends State<HomeTab> {
                 },
                 separatorBuilder: (_, index) => const SizedBox(width: 10),
                 itemCount: categories.length),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: EdgeInsets.only(left: 26),
+            child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Ofertas Especiais',
+                  style: TextStyle(
+                    color: CustomColor.customSwatchColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
+               ),
+            ),
+          ),
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 9 / 11,
+              ),
+              itemCount: appData.items.length,
+              itemBuilder: (_, index) {
+                return ItemTile(
+                  item: appData.items[index],
+                );
+              },
+            ),
           ),
         ],
       ),
