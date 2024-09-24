@@ -40,14 +40,14 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                         children: [
                           const TextSpan(
-                            text: 'Ifood',
+                            text: 'Compre',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
                           TextSpan(
-                            text: 'Market',
+                            text: 'Bem',
                             style: TextStyle(
                               color: CustomColor.customPurpleColor,
                               fontWeight: FontWeight.bold,

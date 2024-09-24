@@ -1,3 +1,4 @@
+import 'package:app_store/src/config/custom_color.dart';
 import 'package:app_store/src/pages/auth/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.red,
-        scaffoldBackgroundColor: Colors.white,
+        primarySwatch: CustomColor.customSwatchColor,
+        scaffoldBackgroundColor: Colors.lightGreen.shade50,
       ),
       debugShowCheckedModeBanner: false,
       home: const SignInScreen(),

@@ -1,4 +1,5 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:app_store/src/config/custom_color.dart';
 import 'package:app_store/src/pages/home/home_tab.dart';
 import 'package:flutter/material.dart';
 
@@ -50,10 +51,10 @@ class _BaseScreenState extends State<BaseScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: onHomeTapped, 
-        backgroundColor: currentIndex == 0 ? Colors.white : Colors.red,
+        backgroundColor: currentIndex == 0 ? Colors.white : CustomColor.customSwatchColor,
         child: Icon(
           Icons.home_outlined,
-          color: currentIndex == 0 ? Colors.red : Colors.white,  // Animação de cor no ícone
+          color: currentIndex == 0 ? CustomColor.customContrastColor : Colors.white,  // Animação de cor no ícone
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, 
@@ -65,7 +66,7 @@ class _BaseScreenState extends State<BaseScreen> {
         leftCornerRadius: 32,
         rightCornerRadius: 32,
         onTap: onNavBarTapped,
-        backgroundColor: Colors.red,
+        backgroundColor: CustomColor.customContrastColor,
         activeColor: Colors.white,
         inactiveColor: Colors.white.withAlpha(100),
       ),

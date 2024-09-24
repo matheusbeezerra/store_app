@@ -38,15 +38,18 @@ class _HomeTabState extends State<HomeTab> {
             ),
             children: [
               TextSpan(
-                  text: 'Ifood',
+                  text: 'Compre',
                   style: TextStyle(
                       color: CustomColor.customSwatchColor,
                       fontWeight: FontWeight.bold)),
               TextSpan(
-                  text: 'Market',
+                  text: 'Bem',
                   style: TextStyle(
                       color: CustomColor.customPurpleColor,
-                      fontWeight: FontWeight.bold)),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                ),
+              ),
             ],
           ),
         ),
@@ -64,12 +67,12 @@ class _HomeTabState extends State<HomeTab> {
                       fontWeight: FontWeight.bold,
                       fontSize: 10),
                 ),
-                child: const Icon(Icons.shopping_cart, color: Colors.red),
                 badgeAnimation: const badges.BadgeAnimation.fade(),
                 badgeStyle: badges.BadgeStyle(
                   badgeColor:
-                      const Color.fromARGB(255, 100, 17, 114).withAlpha(200),
+                       Colors.black.withAlpha(200),
                 ),
+                child:  Icon(Icons.shopping_cart, color: CustomColor.customSwatchColor),
               ),
             ),
           ),
@@ -119,7 +122,7 @@ class _HomeTabState extends State<HomeTab> {
           ),
           const SizedBox(height: 10),
           Padding(
-            padding: EdgeInsets.only(left: 26),
+            padding: const EdgeInsets.only(left: 26),
             child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
