@@ -1,7 +1,9 @@
 import 'package:app_store/src/config/custom_color.dart';
 import 'package:app_store/src/pages/home/components/category_tile.dart';
+import 'package:app_store/src/pages/home/components/item_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:badges/badges.dart' as badges;
+import 'package:app_store/src/config/app_data.dart' as appData;
 
 class HomeTab extends StatefulWidget {
   HomeTab({super.key});
@@ -12,15 +14,15 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   List<String> categories = [
-    'Frutas',
-    'Temperos',
-    'Legumes',
-    'Frios',
-    'Carnes',
-    'Laticíneos'
+    'Creatina',
+    'Whey Protein',
+    'Glutamina',
+    'Materiais Esportivos',
+    'Bcaa',
+    'Energéticos'
   ];
 
-  String selectedCategory = 'Frutas';
+  String selectedCategory = 'Creatina';
 
   @override
   Widget build(BuildContext context) {
@@ -29,24 +31,36 @@ class _HomeTabState extends State<HomeTab> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text.rich(
-          TextSpan(
-            style: const TextStyle(
-              fontSize: 30,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/image/logo.png',
+              height: 40, 
+              width: 40,
             ),
-            children: [
+            const SizedBox(width: 8),
+            Text.rich(
               TextSpan(
-                  text: 'Ifood',
-                  style: TextStyle(
-                      color: CustomColor.customSwatchColor,
-                      fontWeight: FontWeight.bold)),
-              TextSpan(
-                  text: 'Market',
-                  style: TextStyle(
-                      color: CustomColor.customPurpleColor,
-                      fontWeight: FontWeight.bold)),
-            ],
-          ),
+                style: const TextStyle(
+                  fontSize: 30,
+                ),
+                children: [
+                  TextSpan(
+                      text: 'Suplemente',
+                      style: TextStyle(
+                          color: CustomColor.customSwatchColor,
+                          fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text: 'Bem',
+                      style: TextStyle(
+                          color: CustomColor.customPurpleColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30)),
+                ],
+              ),
+            ),
+          ],
         ),
         actions: [
           Padding(
@@ -62,12 +76,12 @@ class _HomeTabState extends State<HomeTab> {
                       fontWeight: FontWeight.bold,
                       fontSize: 10),
                 ),
-                child: const Icon(Icons.shopping_cart, color: Colors.red),
                 badgeAnimation: const badges.BadgeAnimation.fade(),
                 badgeStyle: badges.BadgeStyle(
-                  badgeColor:
-                      const Color.fromARGB(255, 100, 17, 114).withAlpha(200),
+                  badgeColor: Colors.black.withAlpha(200),
                 ),
+                child: Icon(Icons.shopping_cart,
+                    color: CustomColor.customSwatchColor),
               ),
             ),
           ),
@@ -106,7 +120,7 @@ class _HomeTabState extends State<HomeTab> {
                     onPressed: () {
                       setState(() {
                         selectedCategory = categories[index];
-                      });  
+                      });
                     },
                     category: categories[index],
                     isSelected: categories[index] == selectedCategory,
@@ -114,6 +128,39 @@ class _HomeTabState extends State<HomeTab> {
                 },
                 separatorBuilder: (_, index) => const SizedBox(width: 10),
                 itemCount: categories.length),
+          ),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 26),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Os mais pedidos',
+                style: TextStyle(
+                  color: CustomColor.customSwatchColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 9 / 11,
+              ),
+              itemCount: appData.items.length,
+              itemBuilder: (_, index) {
+                return ItemTile(
+                  item: appData.items[index],
+                );
+              },
+            ),
           ),
         ],
       ),
