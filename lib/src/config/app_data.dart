@@ -1,67 +1,67 @@
 import 'package:app_store/src/models/item_model.dart';
 
-ItemModel banana = ItemModel(
-  description: 'Banana Pacovan',
-  imgUrl: 'assets/image/banana.jpg',
-  itemName: 'Banana',
-  price: 5.5,
+ItemModel creatina = ItemModel(
+  description: 'Creatina',
+  imgUrl: 'assets/image/creatina.png',
+  itemName: 'Creatina',
+  price: 105.50,
   unit: 'kg',
 );
 
-ItemModel carne = ItemModel(
-  description: 'Carne picanha',
-  imgUrl: 'assets/image/carne.png',
-  itemName: 'Picanha',
-  price: 95.5,
+ItemModel whey = ItemModel(
+  description: 'Proteina',
+  imgUrl: 'assets/image/whey.png',
+  itemName: 'Whey Protein',
+  price: 100.00,
   unit: 'kg',
 );
 
-ItemModel tomate = ItemModel(
-  description: 'Tomate',
-  imgUrl: 'assets/image/tomate.png',
-  itemName: 'Tomate',
-  price: 5.5,
+ItemModel gluta = ItemModel(
+  description: 'Glutamina',
+  imgUrl: 'assets/image/gluta.jpeg',
+  itemName: 'Glutamina',
+  price: 92.50,
   unit: 'kg',
 );
 
-ItemModel detergente = ItemModel(
-  description: 'Detergente',
-  imgUrl: 'assets/image/detergente.png',
-  itemName: 'Detergente',
-  price: 5.5,
+ItemModel material = ItemModel(
+  description: 'Material Esportivo',
+  imgUrl: 'assets/image/corda.png',
+  itemName: 'Corda de Pular',
+  price: 39.90,
   unit: 'kg',
 );
 
-ItemModel queijo = ItemModel(
-  description: 'Queijo Coalho',
-  imgUrl: 'assets/image/queij.png',
-  itemName: 'Queijo',
-  price: 5.5,
+ItemModel bcaa = ItemModel(
+  description: 'Bcaa',
+  imgUrl: 'assets/image/bcaa.png',
+  itemName: 'Bcaa',
+  price: 70.00,
   unit: 'kg',
 );
 
-ItemModel melancia = ItemModel(
-  description: 'Melancia',
-  imgUrl: 'assets/image/melancia.png',
-  itemName: 'Melancia',
-  price: 5.5,
+ItemModel energetico = ItemModel(
+  description: 'Energetico',
+  imgUrl: 'assets/image/monster.jpg',
+  itemName: 'Monster',
+  price: 8.90,
   unit: 'kg',
 );
 
 List<ItemModel> items = [
-  banana,
-  melancia,
-  queijo,
-  detergente,
-  tomate,
-  carne,
+  creatina,
+  whey,
+  gluta,
+  material,
+  bcaa,
+  energetico,
 ];
 
-  List<String> categories = [
-    'Frutas',
-    'Temperos',
-    'Legumes',
-    'Frios',
-    'Carnes',
-    'Laticíneos'
-  ];
+List<String> categories = [
+  'Creatina',
+  'Whey Protein',
+  'Glutamina',
+  'Materiais Esportivos',
+  'Bcaa',
+  'Energéticos'
+];
