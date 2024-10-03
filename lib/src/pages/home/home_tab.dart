@@ -14,15 +14,15 @@ class HomeTab extends StatefulWidget {
 
 class _HomeTabState extends State<HomeTab> {
   List<String> categories = [
-    'Frutas',
-    'Temperos',
-    'Legumes',
-    'Frios',
-    'Carnes',
-    'Laticíneos'
+    'Creatina',
+    'Whey Protein',
+    'Glutamina',
+    'Materiais Esportivos',
+    'Bcaa',
+    'Energéticos'
   ];
 
-  String selectedCategory = 'Frutas';
+  String selectedCategory = 'Creatina';
 
   @override
   Widget build(BuildContext context) {
@@ -31,27 +31,36 @@ class _HomeTabState extends State<HomeTab> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text.rich(
-          TextSpan(
-            style: const TextStyle(
-              fontSize: 30,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/image/logo.png',
+              height: 40, 
+              width: 40,
             ),
-            children: [
+            const SizedBox(width: 8),
+            Text.rich(
               TextSpan(
-                  text: 'Compre',
-                  style: TextStyle(
-                      color: CustomColor.customSwatchColor,
-                      fontWeight: FontWeight.bold)),
-              TextSpan(
-                  text: 'Bem',
-                  style: TextStyle(
-                      color: CustomColor.customPurpleColor,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                style: const TextStyle(
+                  fontSize: 30,
                 ),
+                children: [
+                  TextSpan(
+                      text: 'Suplemente',
+                      style: TextStyle(
+                          color: CustomColor.customSwatchColor,
+                          fontWeight: FontWeight.bold)),
+                  TextSpan(
+                      text: 'Bem',
+                      style: TextStyle(
+                          color: CustomColor.customPurpleColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30)),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
         actions: [
           Padding(
@@ -69,10 +78,10 @@ class _HomeTabState extends State<HomeTab> {
                 ),
                 badgeAnimation: const badges.BadgeAnimation.fade(),
                 badgeStyle: badges.BadgeStyle(
-                  badgeColor:
-                       Colors.black.withAlpha(200),
+                  badgeColor: Colors.black.withAlpha(200),
                 ),
-                child:  Icon(Icons.shopping_cart, color: CustomColor.customSwatchColor),
+                child: Icon(Icons.shopping_cart,
+                    color: CustomColor.customSwatchColor),
               ),
             ),
           ),
@@ -124,15 +133,15 @@ class _HomeTabState extends State<HomeTab> {
           Padding(
             padding: const EdgeInsets.only(left: 26),
             child: Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Ofertas Especiais',
-                  style: TextStyle(
-                    color: CustomColor.customSwatchColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  ),
-               ),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Os mais pedidos',
+                style: TextStyle(
+                  color: CustomColor.customSwatchColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
+              ),
             ),
           ),
           Expanded(

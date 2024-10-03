@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_store/src/pages/auth/components/custom_text_field.dart';
 import 'package:app_store/src/pages/auth/sign_up_screen.dart';
 import 'package:app_store/src/pages/base/base_screen.dart';
 import 'package:app_store/src/config/custom_color.dart';
-import 'package:flutter/material.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -29,59 +29,72 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Column(
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Stack(
                   children: [
-                    Text.rich(
-                      TextSpan(
-                        style: const TextStyle(
-                          fontSize: 40,
-                          color: Colors.white,
+                    Positioned.fill(
+                      child: Opacity(
+                        opacity: 0.3, 
+                        child: Image.asset(
+                          'assets/image/logo.png',
+                          fit: BoxFit.cover,
                         ),
+                      ),
+                    ),
+                    Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const TextSpan(
-                            text: 'Compre',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          RichText(
+                            text: TextSpan(
+                              style: const TextStyle(
+                                fontSize: 40,
+                                color: Colors.white,
+                              ),
+                              children: [
+                                const TextSpan(
+                                  text: 'Suplemente',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: 'Bem',
+                                  style: TextStyle(
+                                    color: CustomColor.customPurpleColor,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                          TextSpan(
-                            text: 'Bem',
-                            style: TextStyle(
-                              color: CustomColor.customPurpleColor,
-                              fontWeight: FontWeight.bold,
+                          SizedBox(
+                            height: 35,
+                            child: DefaultTextStyle(
+                              style: const TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                              child: AnimatedTextKit(
+                                pause: Duration.zero,
+                                repeatForever: true,
+                                animatedTexts: [
+                                  ScaleAnimatedText('Creatina'),
+                                  ScaleAnimatedText('Whey Protein'),
+                                  ScaleAnimatedText('Glutamina'),
+                                  ScaleAnimatedText('Materiais Esportivos'),
+                                  ScaleAnimatedText('Bcaa'),
+                                  ScaleAnimatedText('Energéticos'),
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    // CATEGORIAS
-                    SizedBox(
-                      height: 35,
-                      child: DefaultTextStyle(
-                        style: const TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                        child: AnimatedTextKit(
-                          pause: Duration.zero,
-                          repeatForever: true,
-                          animatedTexts: [
-                            ScaleAnimatedText('Frutas'),
-                            ScaleAnimatedText('Temperos'),
-                            ScaleAnimatedText('Legumes'),
-                            ScaleAnimatedText('Frios'),
-                            ScaleAnimatedText('Carnes'),
-                            ScaleAnimatedText('Laticíneos'),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
-              // FORMULÁRIO
               Container(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32,
@@ -96,13 +109,11 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    // EMAIL
                     CustomTextField(
                       icon: Icons.mail,
                       label: 'Email',
                       controller: emailController,
                     ),
-                    // SENHA
                     CustomTextField(
                       icon: Icons.lock,
                       label: 'Senha',

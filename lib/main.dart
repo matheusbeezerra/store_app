@@ -1,5 +1,6 @@
 import 'package:app_store/src/config/custom_color.dart';
 import 'package:app_store/src/pages/auth/sign_in_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 void main() {
